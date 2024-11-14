@@ -64,3 +64,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+==================================================================================================
+
+[1]. Verificar o arquivo .env - `OK`.
+[2]. Verificar o arquivo web.php - `OK`, fiz alguns comentários. Atenção ao caminho do controllador, é APP e não app.
+[3]. Verificar o arquivo ProdutoController - `OK` - 
+- Incluí a importação `use App\Models\Produto`;
+- Trocar o text do descricao para string
+- Trocar o decimal do preco para numeric - 'preco'=> 'required|numeric|min:0',
+[4] - No arquivo blade, só alterar o <form action="{{ 'produtos.store' }}" method="POST" enctype="multipart/form-data"> para <form action="{{ route('produtos.store') }}" method="POST" enctype="multipart/form-data">

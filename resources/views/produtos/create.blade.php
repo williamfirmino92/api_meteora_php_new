@@ -15,7 +15,7 @@
             <div class="alert alert-success"> {{ session('success')}} </div>
         @endif
 
-        <form action="{{ 'produtos.store' }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('produtos.store') }}" method="post" enctype="multipart/form-data">
             
             @csrf
 
