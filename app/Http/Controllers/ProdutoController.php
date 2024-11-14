@@ -25,8 +25,17 @@ class ProdutoController extends Controller
 
         $caminhoImagem = $imagem ? $imagem->store('imagens/produtos', 'public') : null;
 
+        Produto::create([
+            'nome'=> $request-> nome,
+            'descricao'=> $request-> descricao,
+            'tamanho'=> $request-> tamanho,
+            'cor'=> $request-> cor,
+            'preco'=> $request-> preco,
+            'quantidade'=> $request-> quantidade,
+            'imagem'=> $request-> imagem
+        ]);
 
-
+        return redirect()->route('produtos.create')->with('success', 'Produto cadastrado com sucesso!');
 
     }
 }
